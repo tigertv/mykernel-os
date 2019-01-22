@@ -31,7 +31,7 @@ run: $(KERNEL_NAME).iso
 	echo 'set default=0'                           >> $(GRUB_CONFIG)
 	echo ''                                        >> $(GRUB_CONFIG)
 	echo 'menuentry "$(KERNEL_NAME) OS" {'         >> $(GRUB_CONFIG)
-	echo '	multiboot /boot/$(KERNEL_NAME).bin'    >> $(GRUB_CONFIG)
+	echo '	multiboot2 /boot/$(KERNEL_NAME).bin'    >> $(GRUB_CONFIG)
 	echo '	boot'                                  >> $(GRUB_CONFIG)
 	echo '}'                                       >> $(GRUB_CONFIG)
 	grub-mkrescue -o $@ $(ISO_DIR)

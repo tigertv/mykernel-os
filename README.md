@@ -1,6 +1,6 @@
 # MyKernel-OS
 
-Just multiboot.
+Just [multiboot2](https://www.gnu.org/software/grub/manual/multiboot2/multiboot.html).
 
 To make iso-file:
 

@@ -1,12 +1,25 @@
 .intel_syntax noprefix
-.set MAGIC, 0x1badb002
-.set FLAGS, (1<<0 | 1<<1)
-.set CHECKSUM, -(MAGIC + FLAGS)
+.SET MAGIC, 0xe85250d6 
+.set ARCH, 0 /* i386 */
+.set HEADER_LEN, header_end - header_start
+.set CHECKSUM, -(MAGIC + ARCH + HEADER_LEN)
 
 .section .multiboot
+header_start:
 	.long MAGIC
-	.long FLAGS
+	.long ARCH 
+	.long HEADER_LEN 
 	.long CHECKSUM
+
+	/* multiboot tags are here */
+
+	/* end tag */
+	.short 0 /* end tag type */
+	.short 0 /* flags */
+	.long 8 /* size of the tag including itself */
+header_end:
+
+.code32
 
 .section .text
 .extern kernelMain
