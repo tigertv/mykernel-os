@@ -1,4 +1,6 @@
 #include "VideoContext.h"
+#include "TextCursor.h"
+
 
 typedef void (*constructor)();
 extern "C" constructor start_ctors;
@@ -23,6 +25,10 @@ extern "C" void kernelMain(const void* multiboot_structure, unsigned int magicNu
 	a.print("NEXT_LINE---------------------");
 
 	b.print("\tPrint at");
+
+	TextCursor t;
+	t.enable(15, 15);
+	t.move(0, 10);
 
 	while(1);
 }

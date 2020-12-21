@@ -1,6 +1,8 @@
 #ifndef VIDEO_CONTEXT_H
 #define VIDEO_CONTEXT_H
 
+#include "types.h"
+
 enum Color {
 	Black = 0, Blue, Green, Cyan,
 	Red, Purple, Brown, Gray,
@@ -10,12 +12,12 @@ enum Color {
 
 class VideoContext {
 private:
-	static unsigned short* videoBegin;
+	static uint16_t* videoBegin;
 	static const int TAB_SIZE = 4;
-	unsigned short* cursor;
-	unsigned int width;
-	unsigned int height;
-	unsigned short colors;
+	uint16_t *cursor;
+	uint16_t width;
+	uint16_t height;
+	uint16_t colors;
 	
 public:
 	VideoContext();

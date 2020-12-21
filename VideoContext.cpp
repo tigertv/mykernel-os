@@ -1,6 +1,6 @@
 #include "VideoContext.h"
 
-unsigned short* VideoContext::videoBegin = (unsigned short*)0xb8000;
+uint16_t* VideoContext::videoBegin = (uint16_t*)0xb8000;
 
 VideoContext::VideoContext(Color background, Color foreground) {
 	cursor = videoBegin;
