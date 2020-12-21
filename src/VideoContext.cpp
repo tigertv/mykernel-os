@@ -1,4 +1,4 @@
-#include "VideoContext.h"
+#include <myos/VideoContext.h>
 
 uint16_t* VideoContext::videoBegin = (uint16_t*)0xb8000;
 

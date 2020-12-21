@@ -1,5 +1,5 @@
-#include "VideoContext.h"
-#include "TextCursor.h"
+#include <myos/VideoContext.h>
+#include <myos/TextCursor.h>
 
 
 typedef void (*constructor)();

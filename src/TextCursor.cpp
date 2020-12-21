@@ -1,4 +1,4 @@
-#include "TextCursor.h"
+#include <myos/TextCursor.h>
 
 TextCursor::TextCursor() : x(0), y(0) {
 	
