@@ -1,3 +1,4 @@
+#include "VideoContext.h"
 
 typedef void (*constructor)();
 extern "C" constructor start_ctors;
@@ -8,17 +9,20 @@ extern "C" void callConstructors()
 		(*i)();
 }
 
-
-extern "C" void printf(char* str) {
-	unsigned short* videoMemory = (unsigned short*)0xb8000;
-
-	for (int i=0;i<str[i] != '\0';i++) {
-		videoMemory[i] = (videoMemory[i] & 0xFF00) | str[i];
-	}
-
-}
-
 extern "C" void kernelMain(const void* multiboot_structure, unsigned int magicNumber) {
-	printf("Hello from kernelMain\n");
+	VideoContext a;
+	a.print("Hello World!!!\n");
+	a.print("We are creating an OS!\n");
+	a.nextLine();
+
+	VideoContext b(Color::Gray, Color::Red);
+	b.goAt(50, 2);
+	b.print("Print at");
+
+	a.print("LINE---------------------\n");
+	a.print("NEXT_LINE---------------------");
+
+	b.print("\tPrint at");
+
 	while(1);
 }

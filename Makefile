@@ -24,7 +24,7 @@ run: $(KERNEL_NAME).iso
 %.s.o : %.s
 	$(AS) $(ASPARAMS) $< -o $@
 %.bin: linker.ld $(OBJS) 
-	ld $(LDPARAMS) -T $< -o $@ $(OBJS)
+	ld $(LDPARAMS) -T $^ -o $@
 %.iso: %.bin
 	cp $< $(ISO_BOOT)/
 	echo 'set timeout=10'                           > $(GRUB_CONFIG)
