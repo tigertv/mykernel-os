@@ -1,19 +1,8 @@
 #include <myos/TextCursor.h>
+#include <myos/ports.h>
 
 TextCursor::TextCursor() : x(0), y(0) {
 	
-}
-
-// TODO: Refactor it all !!!
-inline void outb(uint16_t port, uint8_t data) {
-	asm volatile("outb %0, %1" : : "a" (data), "Nd" (port));
-}
-
-// TODO: Refactor it all !!!
-inline uint8_t inb(uint16_t port) {
-	uint8_t result;
-	asm volatile("inb %1, %0" : "=a" (result) : "Nd" (port));
-	return result;
 }
 
 void TextCursor::enable(uint8_t cursor_start, uint8_t cursor_end) {

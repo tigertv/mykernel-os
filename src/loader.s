@@ -1,5 +1,6 @@
 .intel_syntax noprefix
-.SET MAGIC, 0xe85250d6 
+/*.set MAGIC, 0x1BADB002 - version 1 */
+.set MAGIC, 0xe85250d6 /* version 2 */
 .set ARCH, 0 /* i386 */
 .set HEADER_LEN, header_end - header_start
 .set CHECKSUM, -(MAGIC + ARCH + HEADER_LEN)
