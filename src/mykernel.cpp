@@ -86,7 +86,8 @@ extern "C" void kernelMain(const void* multiboot_structure, unsigned int magicNu
 	win2.show();
 
 	dc.setColor(3);
-	dc.drawLine(0, 0, 40, 180);
+	dc.drawLine(0, 0, 120, 50);
+
 	dc.setColor(5);
 	for(int i = 40; i > 10; --i) {
 		dc.drawCircle(200, 100, i);

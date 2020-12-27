@@ -52,20 +52,23 @@ void DrawContext::drawPoint(int x, int y) {
 }
 
 void DrawContext::drawLine(int x1, int y1, int x2, int y2) {
+
 	// TODO: check boundaries
 	int dx = x2 - x1;
 	int dy = y2 - y1; 
+	int diry = dy;
+
 	if (dx < 0) dx = -dx;
-	if (dy < 0) dy = -dy;
+	if (dy < 0) {
+		dy = -dy;
+		diry = -1;
+	} else if (diry != 0) diry = 1;
 
 	int err = 0;
 	int derr = dy + 1;
 	int y = y1;
-	int diry = y2 - y1;
-	if (diry > 0) diry = 1;
-	if (diry < 0) diry = -1;
 
-	for(int x = x1; x < x2; ++x) {
+	for(int x = x1; x <= x2; ++x) {
 		drawPoint(x, y);
 		err += derr;
 		if (err >= (dx + 1)) {
@@ -73,6 +76,7 @@ void DrawContext::drawLine(int x1, int y1, int x2, int y2) {
 			err -= dx + 1;
 		}
 	}
+
 
 }
 
