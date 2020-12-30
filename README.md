@@ -2,13 +2,13 @@
 
 Just [multiboot2](https://www.gnu.org/software/grub/manual/multiboot2/multiboot.html).
 
-To make iso-file:
+To make an iso-file:
 
 ```
 make
 ```
 
-To execute on qemu:
+To execute by qemu:
 
 ```
 make run
